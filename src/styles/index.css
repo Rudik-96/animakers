@@ -279,15 +279,18 @@ footer{padding:52px 0;border-top:1px solid rgba(42,50,105,.09)}
 }
 .backlink svg{width:17px;height:17px}
 .backlink:hover{color:var(--violet);gap:11px}
-.project__hero{
-  border-radius:28px;overflow:hidden;margin-bottom:56px;background:var(--cream-deep);
-  box-shadow:0 40px 80px -46px rgba(42,50,105,.55);
+.project__layout{
+  display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1fr);
+  gap:clamp(32px,4vw,60px);align-items:start;
 }
-.project__hero img{width:100%;height:auto;max-height:72vh;object-fit:cover}
-.project__body{display:grid;grid-template-columns:1.65fr 1fr;gap:60px;align-items:start}
+.project__media{
+  border-radius:26px;overflow:hidden;background:var(--cream-deep);
+  box-shadow:0 34px 70px -44px rgba(42,50,105,.6);
+}
+.project__media img{width:100%;height:auto;display:block}
 .project__text p{margin-bottom:20px;color:var(--navy-soft);font-size:17.5px}
-.project__text p:last-child{margin-bottom:0}
 .project__facts{
+  margin-top:34px;
   background:var(--white);border-radius:24px;padding:26px 30px;
   border:1px solid rgba(42,50,105,.05);
   box-shadow:0 18px 44px -30px rgba(42,50,105,.5);
@@ -341,7 +344,7 @@ footer{padding:52px 0;border-top:1px solid rgba(42,50,105,.09)}
   .card--wide{grid-column:span 2}
   .svc{grid-template-columns:repeat(2,1fr)}
   .contact__box{grid-template-columns:1fr}
-  .project__body{grid-template-columns:1fr;gap:36px}
+  .project__layout{grid-template-columns:1fr;gap:34px}
   .burger{display:block}
   .nav__menu{
     position:fixed;top:var(--hh);left:0;right:0;

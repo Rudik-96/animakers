@@ -57,22 +57,22 @@ export default function ProjectDetail() {
           <Reveal as="h2">{title}</Reveal>
         </div>
 
-        <Reveal className="project__hero">
-          <img src={src} alt={alt} />
-        </Reveal>
+        <div className="project__layout">
+          <Reveal className="project__media">
+            <img src={src} alt={alt} />
+          </Reveal>
 
-        <div className="project__body">
           <div className="project__text">
             {description.map(paragraph => (
               <Reveal as="p" key={paragraph.slice(0, 24)}>{paragraph}</Reveal>
             ))}
-          </div>
 
-          <Reveal className="project__facts">
-            <div className="fact"><b>Year</b><span>{year}</span></div>
-            <div className="fact"><b>Our role</b><span>{role}</span></div>
-            <div className="fact"><b>Scope</b><span>{scope}</span></div>
-          </Reveal>
+            <Reveal className="project__facts">
+              <div className="fact"><b>Year</b><span>{year}</span></div>
+              <div className="fact"><b>Our role</b><span>{role}</span></div>
+              <div className="fact"><b>Scope</b><span>{scope}</span></div>
+            </Reveal>
+          </div>
         </div>
 
         <Reveal className="pager">
