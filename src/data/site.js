@@ -29,7 +29,5 @@ export const STATS = [
 ]
 
 export const ABOUT_PHOTOS = [
-  { src: asset('/assets/images/about-01.jpg'), alt: 'Animakers team at work' },
-  { src: asset('/assets/images/about-02.jpg'), alt: 'Studio' },
-  { src: asset('/assets/images/about-03.jpg'), alt: 'Studio' },
+  { src: asset('/assets/images/about-02.jpg'), alt: 'The Animakers team' },
 ]
