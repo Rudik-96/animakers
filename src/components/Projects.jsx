@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import Blob from './Blob.jsx'
 import Eyebrow from './Eyebrow.jsx'
 import Reveal from './Reveal.jsx'
@@ -18,11 +19,11 @@ export default function Projects() {
         </div>
 
         <div className="grid">
-          {PROJECTS.map(({ src, alt, title, meta, wide }, i) => (
+          {PROJECTS.map(({ slug, src, alt, title, meta, wide }, i) => (
             <Reveal
-              as="a"
-              key={src + title}
-              href="#"
+              as={Link}
+              key={slug}
+              to={`/projects/${slug}`}
               className={wide ? 'card card--wide' : 'card'}
               delay={i * 60}
             >
