@@ -249,9 +249,9 @@ input:focus,textarea:focus{border-color:var(--purple);background:#fff;box-shadow
 textarea{resize:vertical;min-height:118px}
 
 /* ---------- footer ---------- */
-footer{padding:44px 0;border-top:1px solid rgba(42,50,105,.09)}
+footer{padding:52px 0;border-top:1px solid rgba(42,50,105,.09)}
 .foot{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
-.foot img{height:56px;width:auto}
+.foot img{height:clamp(70px,8vw,104px);width:auto}
 .foot p{font-size:14px;color:var(--navy-soft);margin-left:auto}
 
 /* ---------- reveal ---------- */
