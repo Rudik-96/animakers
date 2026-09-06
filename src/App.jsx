@@ -1,23 +1,22 @@
-import Header from './components/Header.jsx'
-import Hero from './components/Hero.jsx'
-import About from './components/About.jsx'
-import Projects from './components/Projects.jsx'
-import Services from './components/Services.jsx'
-import Contact from './components/Contact.jsx'
-import Footer from './components/Footer.jsx'
+import { Navigate, Route, Routes } from 'react-router-dom'
+import Layout from './components/Layout.jsx'
+import Home from './pages/Home.jsx'
+import AboutPage from './pages/AboutPage.jsx'
+import ProjectsPage from './pages/ProjectsPage.jsx'
+import ServicesPage from './pages/ServicesPage.jsx'
+import ContactPage from './pages/ContactPage.jsx'
 
 export default function App() {
   return (
-    <>
-      <Header />
-      <main id="home">
-        <Hero />
-        <About />
-        <Projects />
-        <Services />
-        <Contact />
-      </main>
-      <Footer />
-    </>
+    <Routes>
+      <Route element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="about" element={<AboutPage />} />
+        <Route path="projects" element={<ProjectsPage />} />
+        <Route path="services" element={<ServicesPage />} />
+        <Route path="contact" element={<ContactPage />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Route>
+    </Routes>
   )
 }

@@ -1,36 +1,39 @@
+import { NavLink } from 'react-router-dom'
 import useMobileMenu from '../hooks/useMobileMenu.js'
-import useScrollSpy from '../hooks/useScrollSpy.js'
 import { LOGO, NAV_LINKS } from '../data/site.js'
 
-const SPY_IDS = NAV_LINKS.map(link => link.id)
-
-export default function Header() {
+export default function Header({ transparent = false }) {
   const { open, toggle, close } = useMobileMenu()
-  const active = useScrollSpy(SPY_IDS)
+  const isTransparent = transparent && !open
+
+  const classes = ['site-header', isTransparent ? 'is-transparent' : '', open ? 'is-open' : '']
+    .filter(Boolean)
+    .join(' ')
 
   return (
-    <header className={open ? 'is-open' : undefined}>
+    <header className={classes}>
       <nav className="nav">
-        <a href="#home" className="nav__logo" onClick={close}>
+        <NavLink to="/" className="nav__logo" onClick={close}>
           <img src={LOGO} alt="Animakers Studio" />
-        </a>
+        </NavLink>
 
         <div className="nav__menu" id="navmenu">
           <div className="nav__links">
-            {NAV_LINKS.map(({ id, label }) => (
-              <a
-                key={id}
-                href={`#${id}`}
-                className={active === id ? 'is-active' : undefined}
+            {NAV_LINKS.map(({ to, label }) => (
+              <NavLink
+                key={to}
+                to={to}
+                end={to === '/'}
+                className={({ isActive }) => (isActive ? 'is-active' : undefined)}
                 onClick={close}
               >
                 {label}
-              </a>
+              </NavLink>
             ))}
           </div>
-          <a href="#contact" className="btn btn--primary nav__cta" onClick={close}>
+          <NavLink to="/contact" className="btn btn--primary nav__cta" onClick={close}>
             Contact Us
-          </a>
+          </NavLink>
         </div>
 
         <button

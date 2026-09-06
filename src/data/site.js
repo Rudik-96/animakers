@@ -1,10 +1,10 @@
 import asset from './asset.js'
 
 export const NAV_LINKS = [
-  { id: 'home', label: 'Home' },
-  { id: 'about', label: 'About Us' },
-  { id: 'projects', label: 'Projects' },
-  { id: 'services', label: 'Services' },
+  { to: '/', label: 'Home' },
+  { to: '/about', label: 'About Us' },
+  { to: '/projects', label: 'Projects' },
+  { to: '/services', label: 'Services' },
 ]
 
 export const LOGO = asset('/assets/logos/animakers-logo.png')
